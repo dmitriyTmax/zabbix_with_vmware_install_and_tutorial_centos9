@@ -4,7 +4,7 @@ This repository provides you step by step guide how to deploy and make configura
 1. Install epel repo <br/>
   `dnf -y install epel-release` 
 
-2. Disable Zabbix packages provided by EPEL. Edit file /etc/yum.repos.d/epel.repo and add the following statement. <br/>
+2. Disable Zabbix packages provided by EPEL. Edit file `/etc/yum.repos.d/epel.repo` and add the following statement. <br/>
 
    `[epel]`<br/>
   ` ... `<br/>
