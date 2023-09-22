@@ -39,7 +39,7 @@ mariadb -uroot -p'$root_dbpassword' -e "create database zabbix character set utf
 mariadb -uroot -p'$root_dbpassword' -e "create user zabbix@localhost identified by '$dbpassword';"
 mariadb -uroot -p'$root_dbpassword' -e "grant all privileges on zabbix.* to zabbix@localhost;"
 mariadb -uroot -p'$root_dbpassword' -e "set global log_bin_trust_function_creators = 1;"
-zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p'$root_dbpassword' zabbix
+zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p'$dbpassword' zabbix
 mariadb -uroot -p'$root_dbpassword' -e "set global log_bin_trust_function_creators = 0;"
 
 #Creating zabbix user and group
