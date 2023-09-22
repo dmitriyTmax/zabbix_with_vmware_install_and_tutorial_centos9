@@ -32,3 +32,5 @@ Comment out next lines: <br/>
 `VMwarePerfFrequency=60` <br/>
 `VMwareCacheSize=32M` <br/>
 `VMwareTimeout=120` <br/>
+
+7. Run `zabbix_server`
