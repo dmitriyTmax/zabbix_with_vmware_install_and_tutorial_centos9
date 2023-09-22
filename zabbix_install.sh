@@ -55,7 +55,7 @@ dnf install -y php-bcmath php-fpm php-gd php-json php-ldap php-mbstring php-xml 
 #Install zabbix-agent and zabbix-web
 rpm -Uvh https://repo.zabbix.com/zabbix/$version/rhel/9/x86_64/zabbix-release-$version-1.el9.noarch.rpm
 dnf clean all
-dnf install zabbix-web-mysql zabbix-nginx-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent2 
+dnf install -y zabbix-web-mysql zabbix-nginx-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent2 
 
 # Download zabbix and install zabbix
 echo ""
