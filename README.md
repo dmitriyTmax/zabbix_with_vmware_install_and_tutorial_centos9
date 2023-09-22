@@ -23,6 +23,6 @@ Edit file /etc/nginx/conf.d/zabbix.conf uncomment and set 'listen' and 'server_n
 `# server_name example.com;` <br/>
 
 6.  Configure the database for Zabbix server
-Edit file /etc/zabbix/zabbix_server.conf <br/>
+Edit file /usr/local/etc/zabbix_server.conf <br/>
 
 `DBPassword=your_database_password`
