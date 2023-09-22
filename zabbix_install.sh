@@ -31,16 +31,22 @@ mariadb-secure-installation
 
 #Create initial database
 echo ""
-echo "Input root password for database:"
-read root_dbpassword
-echo "Input database password:"
-read dbpassword
-mariadb -uroot -p'$root_dbpassword' -e "create database zabbix character set utf8mb4 collate utf8mb4_bin;"
-mariadb -uroot -p'$root_dbpassword' -e "create user zabbix@localhost identified by '$dbpassword';"
-mariadb -uroot -p'$root_dbpassword' -e "grant all privileges on zabbix.* to zabbix@localhost;"
-mariadb -uroot -p'$root_dbpassword' -e "set global log_bin_trust_function_creators = 1;"
-zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mariadb --default-character-set=utf8mb4 -uzabbix -p'$dbpassword' zabbix
-mariadb -uroot -p'$root_dbpassword' -e "set global log_bin_trust_function_creators = 0;"
+echo -n "Input root password for database: "
+read -s root_dbpassword
+echo ""
+echo -n "Input database password: "
+read -s dbpassword
+echo ""
+echo "Creating database..."
+mariadb -uroot -p"$root_dbpassword" -e "create database zabbix character set utf8mb4 collate utf8mb4_bin;"
+echo "Creating user.."
+mariadb -uroot -p"$root_dbpassword" -e "create user zabbix@localhost identified by '$dbpassword';"
+echo "Grant previleges to database"
+mariadb -uroot -p"$root_dbpassword" -e "grant all privileges on zabbix.* to zabbix@localhost;"
+mariadb -uroot -p"$root_dbpassword" -e "set global log_bin_trust_function_creators = 1;"
+zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mariadb --default-character-set=utf8mb4 -uzabbix -p"$dbpassword" zabbix
+mariadb -uroot -p"$root_dbpassword" -e "set global log_bin_trust_function_creators = 0;"
+echo "DB created"
 
 #Creating zabbix user and group
 echo ""
