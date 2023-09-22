@@ -24,4 +24,11 @@ Edit file `/etc/nginx/conf.d/zabbix.conf` uncomment and set 'listen' and 'server
 
 6.  Configure the database for Zabbix server. Edit file `/usr/local/etc/zabbix_server.conf` <br/>
 
-`DBPassword=your_database_password`
+`DBPassword=your_database_password`  <br/>
+
+Comment out next lines: <br/>
+`StartVMwareCollectors=5` <br/>
+`VMwareFrequency=60` <br/>
+`VMwarePerfFrequency=60` <br/>
+`VMwareCacheSize=32M` <br/>
+`VMwareTimeout=120` <br/>
