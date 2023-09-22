@@ -15,3 +15,14 @@ This repository provides you step by step guide how to deploy and make configura
 
 4. Run script <br/>
    `./zabbix_install`
+
+5.  Configure PHP for Zabbix frontend
+Edit file /etc/nginx/conf.d/zabbix.conf uncomment and set 'listen' and 'server_name' directives. <br/>
+
+# listen 8080; <br/>
+# server_name example.com; <br/>
+
+6. d. Configure the database for Zabbix server
+Edit file /etc/zabbix/zabbix_server.conf
+
+**DBPassword=your_database_password**
