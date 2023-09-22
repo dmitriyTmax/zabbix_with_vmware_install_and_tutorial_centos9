@@ -76,3 +76,6 @@ nano /usr/local/etc/zabbix_server.conf
 
 systemctl restart zabbix-agent2 nginx php-fpm
 systemctl enable zabbix-agent2 nginx php-fpm
+
+firewall-cmd --permanent --zone=public --add-port=8080/tcp
+firewall-cmd --reload
