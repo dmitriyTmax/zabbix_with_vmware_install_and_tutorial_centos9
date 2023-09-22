@@ -71,6 +71,8 @@ echo "Start to install zabbix"
 make
 make install
 
-
 nano /etc/nginx/conf.d/zabbix.conf
 nano /usr/local/etc/zabbix_server.conf
+
+systemctl restart zabbix-agent2 nginx php-fpm
+systemctl enable zabbix-agent2 nginx php-fpm
