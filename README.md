@@ -1,6 +1,8 @@
 # zabbix_with_vmware_install_and_tutorial_centos9 x86_64
 This repository provides you step by step guide how to deploy and make configuration of zabbix on CentOS 9 with VMWare support. Database is using in this script **_MariaDB-11.0.3_**.
 
+All commands run as `root` or `sudo` user
+
 1. Install epel repo <br/>
   `dnf -y install epel-release` 
 
